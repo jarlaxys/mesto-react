@@ -51,33 +51,18 @@ function App() {
         onCardClick={handleCardClick}
       />
       <Footer />
-      <PopupWithForm
-        id="edit-popup"
-        title="Редактировать профиль"
-        buttonText="Сохранить"
+      <PopupEditProfile
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}
-      >
-        <PopupEditProfile />
-      </PopupWithForm>
-      <PopupWithForm
-        id="edit-avatar"
-        title="Обновить аватар"
-        buttonText="Сохранить"
+      />
+      <PopupEditAvatar
         isOpen={isEditAvatarPopupOpen}
         onClose={closeAllPopups}
-      >
-        <PopupEditAvatar />
-      </PopupWithForm>
-      <PopupWithForm
-        id="add-popup"
-        title="Новое место"
-        buttonText="Создать"
+      />
+      <PopupAddPlace
         isOpen={isAddPlacePopupOpen}
         onClose={closeAllPopups}
-      >
-        <PopupAddPlace />
-      </PopupWithForm>
+      />
       <ImagePopup
         name={selectedCard.name}
         link={selectedCard.link}

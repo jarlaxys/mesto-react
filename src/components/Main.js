@@ -5,9 +5,11 @@ import { api } from "../utils/api";
 import Card from "./Card";
 
 function Main(props) {
-  const [userName, setUserName] = useState();
-  const [userDescription, setUserDescription] = useState();
-  const [userAvatar, setUserAvatar] = useState();
+  const [userName, setUserName] = useState("Имя");
+  const [userDescription, setUserDescription] = useState("Информация");
+  const [userAvatar, setUserAvatar] = useState(
+    "https://webpulse.imgsmail.ru/imgpreview?mb=webpulse&key=pulse_cabinet-image-b1a78a08-1bd8-44b5-9025-a0c7f5f130fa",
+  );
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -17,10 +19,8 @@ function Main(props) {
         setUserDescription(userRes.about);
         setUserAvatar(userRes.avatar);
         setCards(cardsRes);
-        console.log(cardsRes);
       })
-      .catch((err) => console.log(err))
-      .finally();
+      .catch((err) => console.log(err));
   }, []);
 
   return (
